@@ -1,7 +1,7 @@
 Mandatories steps
 -----------------
 
-Whatever the methodology (manually or via Docker) you have chosen to install the product, the following prerequisites must be done.
+Whatever the methodology chosen (manually or via Docker) to install the product, the following prerequisistes must be done :
 
 .. toctree::
    :titlesonly:
