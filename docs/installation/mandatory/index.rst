@@ -9,6 +9,7 @@ except the last one (needs to be done if Docker is chosen) an the third (needs t
 .. toctree::
    :titlesonly:
 
+   dotnet
    redis
    mongo
    kibana

@@ -11,28 +11,28 @@ First download the MSI from the URL and launch it.
 Install all the required softwares
 ----------------------------------
 
-When the installation is launched, all the required softwares described in the previous part *Mandatories steps*
-are installed on your machine.
+All the required softwares described in the previous part :doc:`Mandatories steps <../mandatory/index>`
+are installed on your machine except **Kibana and Elastic Search**.
 
 The softwares that will be installed are :
 
- 1. Install Redis version 3.2.100
- 2. Install DotNetCore Runtime version 1.0.1
- 3. Install DotNetCore SDK version 1.0.0.preview2-003133
- 4. Install NodeJs version 4.6.0
- 5. Install MongoDb version 3.2.10
+ 1. Redis version 3.2.100
+ 2. DotNetCore Runtime version 1.0.1
+ 3. DotNetCore SDK version 1.0.0.preview2-003133
+ 4. NodeJs version 4.6.0
+ 5. MongoDb version 3.2.10
 
-When the installation is finished then the product MSI is launched.
+When the installation is completed then the product MSI is launched.
 
 Install the product
 -------------------
 
-The MSI is made of six screens.
+The MSI is made of six screens :
 
  1. The classical Welcome window
  2. An end-user license agreement
- 3. And four screens where the connection strings need to be specified. In each of them there is a *test connection* button. Fill-in the fields (server, credentials and catalog)
-    and test the connection. If it successes then the Next button is disabled otherwise
+ 3. Four screens where the connection strings need to be specified. In each of them there is a *test connection* button. Fill-in the fields (server, credentials and catalog)
+    and test the connection by clicking on the button. If it successes then the Next button is disabled otherwise
     an error message is displayed.
 
  .. image:: connection-dlg.png
@@ -46,9 +46,9 @@ The four connection strings are :
 
  1. SimpleIdentityServer : it contains all the assets of the SimpleIdentityServer OpenId provider.
  2. Uma database : it contains all the assets of the UMA server.
- 3. Configuration database : it contains the some settings (expiration time ...) and the external authentication providers.
- 4. Identity server database : it contains all the assets of contains the IdentityServer OpenId provider.
+ 3. Configuration database : it contains some settings (expiration time ...) and the external authentication providers.
+ 4. Identity server database : it contains all the assets of the IdentityServer OpenId provider.
 
-The next part consists to install Elastic Search and Kibana on your machine, refer to the chapter *Install Kibana*.
+The next part consists to install Elastic Search and Kibana on your machine, refer to the chapter :doc:`Install Kibana <../mandatory/kibana>`.
 
 When everything is installed jump to the next section *Use the application*
