@@ -1,6 +1,8 @@
 Install mongo
 =============
 
-Mongo needs to be installed,  `download`_ the correct MSI and install it.
+Mongo is a NoSql database used by the API to store the resources.
 
-.. _download: https://www.mongodb.com/download-center#community
+It can be downloaded from the `website`_.
+
+.. _website: https://www.mongodb.com/download-center#community
