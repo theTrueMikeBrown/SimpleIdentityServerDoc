@@ -13,7 +13,8 @@ Install all the required softwares
 
 When the installation is launched, all the required softwares described in the previous part *Mandatories steps*
 are installed on your machine.
-Softwares installed :
+
+The softwares that will be installed are :
 
  1. Install Redis version 3.2.100
  2. Install DotNetCore Runtime version 1.0.1
@@ -21,7 +22,7 @@ Softwares installed :
  4. Install NodeJs version 4.6.0
  5. Install MongoDb version 3.2.10
 
-When the installation is finished the MSI of the product is launched.
+When the installation is finished then the product MSI is launched.
 
 Install the product
 -------------------
