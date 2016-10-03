@@ -1,10 +1,15 @@
 Mandatories steps
 -----------------
 
-Whatever the methodology chosen (manually or via Docker) to install the product, the following prerequisistes must be done :
+There are two different ways to deploy the product, either with MSI installer or with Docker.
+Whatever the methodology chosen the following steps are automatically performed,
+except the last one which needs to be done if Docker is chosen :
 
 .. toctree::
    :titlesonly:
 
-   git
+   redis
+   mongo
+   kibana
+   nodejs
    certificate
