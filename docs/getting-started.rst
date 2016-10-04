@@ -36,11 +36,11 @@ Once it has been installed, create an empty project and display its contextual m
 .. image:: vs-items.png
   :width: 150px
 
-* The first-one *Generate security proxy* generates C# functions into the selected project.
+* The first-one **Generate security proxy** generates C# functions into the selected project.
   They are called by a client / API consumer to retrieve an RPT token. This one is passed into an HTTP Request Header
   to access to a protected resource.
-* The second option *Generate resource(s)* displays the API operations of the selected project.
-  The developer selects some operations to protect and submits his choice by clicking on "Protect".
+* The second option **Generate resource(s)** displays the API operations of the selected project.
+  The developer selects some operations to protect and submits his choice by clicking on **Protect**.
   At the end the resources are automatically created based on a naming convention.
 
 In the next sections we will run the second Scenario that consists to call a protected API via an API.
@@ -51,8 +51,8 @@ Protect the operation
 ---------------------
 
 Select the project "ClientApi" and display its contextual menu.
-Click on the item *Generate resource(s)* and wait some minutes before the list is displayed.
-Select the operation "ClientsController/Get" and click on protect.
+Click on the item **Generate resource(s)** and wait some minutes before the list is displayed.
+Select the operation "ClientsController/Get" and click on **Protect**.
 
 .. image:: protected-clients.png
   :width: 200px
@@ -62,7 +62,7 @@ Now the resource has been added, its permissions can be edited via the website.
 Add permission
 --------------
 
-Browse the `URL`_ and submit the following credentials in the login page.
+Browse the `URL`_ and submit the following credentials.
 If they are correct then you'll see more options in the left panel::
 
    Login: administrator
@@ -85,10 +85,16 @@ In the new window add a new rule and persist the changes by executing the follow
 3. Click on **add rule**
 4. Persist the changes by clicking on **save**
 
+At the end you should obtain something like this :
+
+
+
 Execute the application
 -----------------------
 
-
+In the solution set *MarketingClient* as startup-project and run-it.
+In your preferred browser go to the URL : http://localhost:5103/api/ratings.
+Finally you'll see the list of clients returned by the API.
 
 .. _URL: http://localhost:4200
 .. _IdentityServer4: https://github.com/IdentityServer/IdentityServer4
