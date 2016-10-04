@@ -22,7 +22,7 @@ The softwares that will be installed are :
  4. NodeJs version 4.6.0
  5. MongoDb version 3.2.10
 
-When the installation is completed then the product MSI is launched.
+When the installation is completed then the MSI product is launched.
 
 Install the product
 -------------------
@@ -32,7 +32,7 @@ The MSI is made of six screens :
  1. The classical Welcome window
  2. An end-user license agreement
  3. Four screens where the connection strings need to be specified. In each of them there is a *test connection* button. Fill-in the fields (server, credentials and catalog)
-    and test the connection by clicking on the button. If it successes then the Next button is disabled otherwise
+    and test the connection by clicking on the button. If it successes then the Next button is enabled otherwise
     an error message is displayed.
 
  .. image:: connection-dlg.png
@@ -51,4 +51,4 @@ The four connection strings are :
 
 The next part consists to install Elastic Search and Kibana on your machine, refer to the chapter :doc:`Install Kibana <../mandatory/kibana>`.
 
-When everything is installed jump to the next section *Use the application*
+When everything is installed jump to the next section :doc:`Getting started <../../getting-started>`

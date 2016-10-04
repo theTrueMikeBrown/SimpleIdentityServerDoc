@@ -15,5 +15,6 @@ Topics:
    docs/benchmark
    docs/architecture
    docs/installation/index
+   docs/getting-started
    docs/scenarios/index
    docs/uc/index
