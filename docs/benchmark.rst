@@ -80,25 +80,27 @@ don't hesitate to contact-us by email.
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | Organize resources by urls                 | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/nvalid.png| .. image:: images/nvalid.png|
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
-| Enable or disable external                 | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/valid.png | .. image:: images/valid.png |
-| identity providers                         |                             |                             |                             |                             |
+| | Enable or disable external               | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/valid.png | .. image:: images/valid.png |
+| | identity providers                       |                             |                             |                             |                             |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
-| Monitoring tool                            | Elastic Search + Kibana     | Not specified               | Custom tool                 | Custom tool                 |
+| Monitoring tool                            | | Elastic Search &          | Not specified               | Custom tool                 | Custom tool                 |
+|                                            | | Kibana                    |                             |                             |                             |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | Two factor authentications                 | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/valid.png | .. image:: images/valid.png |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | **Deployment**                                                           |                             |                             |                             |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
-| Deployment methods                         | Docker or via MSI           | Docker or via Nuget packages| Manually                    | Docker or via MSI           |
+| Deployment methods                         | | Docker                    | | Docker                    | Manually                    | | Manually                  |
+|                                            | | MSI                       | | Nuget packages            |                             | | SAAS                      |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | **Others**                                                               |                             |                             |                             |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
-| Number of OPENID certifications            | 5                           | 4                           | 5                           | 2                           |
+| OPENID certifications                      | 5                           | 4                           | 5                           | 2                           |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | Preferred languages                        | C#                          | C#                          | Java                        | No preference               |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
-| Tools or methods used to easily interact   | Visual studio extension and | Nuget packages              | ???                         | ???                         |
-| with APIs                                  | Nuget packages              |                             |                             |                             |
+| | Tools or methods used                    | | VSE and                   | Nuget packages              | ???                         | ???                         |
+| | to easily interact with APIs             | | Nuget packages            |                             |                             |                             |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 
 .. _Register a client: https://openid.net/specs/openid-connect-registration-1_0.html

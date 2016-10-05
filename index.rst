@@ -12,6 +12,7 @@ Topics:
 .. toctree::
    :titlesonly:
 
+   docs/terminologies
    docs/benchmark
    docs/architecture
    docs/installation/index
