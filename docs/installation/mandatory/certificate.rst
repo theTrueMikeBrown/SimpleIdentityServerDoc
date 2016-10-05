@@ -6,7 +6,7 @@ Install the certificate
 
     <style> .red-bold {color:red; font-weight: bold;} </style>
 
-The certificate :download:`LokitCA.cer <LokitCA.crt>` must be added to your certificate store **Local Computer \ Trusted CA**.
+The certificate :download:`LokitCA.cer <../../download/LokitCA.crt>` must be added to your certificate store **Local Computer \ Trusted CA**.
 
 1. Execute the **mmc.exe** tool
 2. Click on the menu item **File \ Add Remove snap in ...**

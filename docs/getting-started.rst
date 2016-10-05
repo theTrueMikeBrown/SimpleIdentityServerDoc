@@ -17,7 +17,7 @@ Normally two shortcuts have been added to your Desktop : *Launch-IdServer.cmd* a
 The difference between both is the OpenId Provider. Indeed you can choose between our implementation *SimpleIdentityServer* or `IdentityServer4`_.
 To help you making a decision, you can read the :doc:`Benchmark <benchmark>`.
 
-.. image:: shortcuts.png
+.. image:: images/shortcuts.png
   :width: 50px
 
 .. _install-visualstudio-extension:
@@ -25,15 +25,15 @@ To help you making a decision, you can read the :doc:`Benchmark <benchmark>`.
 Install the Visual Studio Extension
 -----------------------------------
 
-A Visual Studio Extension is available and can be downloaded here. It provides some useful features and thanks to it
+A Visual Studio Extension is available and can be downloaded :download:`here <download/SimpleIdentityServer.Vse.vsix>`. It provides some useful features and thanks to it
 any developers can easily protect an API and create client without requiring strong knowledge in OpenId, Uma and OAUTH2.0.
 
-.. attention:: Unfortunately the tool is working only with Visual Studio 2015, ASP.NET CORE projects and C# projects.
+.. attention:: Unfortunately the tool is working only with Visual Studio 2015, ASP.NET CORE and C# projects.
                Previous versions and other languages will be supported in future releases.
 
 Once it has been installed, create an empty project and display its contextual menu. You'll see two new items in it :
 
-.. image:: vs-items.png
+.. image:: images/vs-items.png
   :width: 150px
 
 * The first-one **Generate security proxy** generates C# functions into the selected project.
@@ -54,7 +54,7 @@ Select the project "ClientApi" and display its contextual menu.
 Click on the item **Generate resource(s)** and wait some minutes before the list is displayed.
 Select the operation "ClientsController/Get" and click on **Protect**.
 
-.. image:: protected-clients.png
+.. image:: images/protected-clients.png
   :width: 200px
 
 Now the resource has been added, its permissions can be edited via the website.
@@ -62,18 +62,22 @@ Now the resource has been added, its permissions can be edited via the website.
 Add permission
 --------------
 
-Browse the `URL`_ and submit the following credentials.
+Browse the `URL of the website`_ and submit the following credentials.
 If they are correct then you'll see more options in the left panel::
 
    Login: administrator
    Password: password
 
-.. image:: left-panel.png
+.. image:: images/left-panel.png
      :width: 180px
 
-Click on **manage** and import the settings file. It contains all the assets that you need to run the different examples.
+Click on **manage** and import one of the settings file.
+They contain all the assets that you need to run the different examples.
 
-.. image:: import.png
+* :download:`Settings file of SimpleIdentityServer <download/export-simpleidserver.json>`
+* :download:`Settings file of IdentityServer4 <download/export-idserver.json>`
+
+.. image:: images/import.png
      :width: 350px
 
 Click on **resources** and navigate to the folder *Apis > ClientApi > v1 > ClientsController*.
@@ -87,14 +91,18 @@ In the new window add a new rule and persist the changes by executing the follow
 
 At the end you should obtain something like this :
 
-
+.. image:: images/add-scenario2-rule.png
+     :width: 350px
 
 Execute the application
 -----------------------
 
-In the solution set *MarketingClient* as startup-project and run-it.
-In your preferred browser go to the URL : http://localhost:5103/api/ratings.
-Finally you'll see the list of clients returned by the API.
+In the solution explorer set *ClientApi* and *MarketingClient* as startup projects and run them by pressing **F5**.
+Open the URL http://localhost:5103/api/ratings with your preferred browser.
+The list of clients should be returned by the API :
 
-.. _URL: http://localhost:4200
+.. image:: images/scenario2-result.png
+     :width: 350px
+
+.. _URL of the website: http://localhost:4200
 .. _IdentityServer4: https://github.com/IdentityServer/IdentityServer4
