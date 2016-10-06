@@ -3,7 +3,7 @@ Install with Docker
 
 1. :doc:`Install the certificate <../mandatory/certificate>`.
 2. Install `Docker`_.
-3. Open Virtual box, select the *default* machine and add some forwarding port rules
+3. Open Virtual box, select the *default* machine and add the following forwarding port rules
 
 +-----------+-----------+-----------+-----------+-----------+-------------+
 | Name      | Protocol  | Host IP   | Host Port | Guest IP  | Guest Port  |

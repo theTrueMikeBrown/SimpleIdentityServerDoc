@@ -2,7 +2,7 @@ Manual installation
 ===================
 
 This article will show you how to manually install the product on Windows.
-First download the MSI from the URL and launch it.
+First download the MSI from the URL and launch it as **administrator**.
 
 .. contents:: Sections:
   :local:
@@ -12,7 +12,7 @@ Install all the required softwares
 ----------------------------------
 
 All the required softwares described in the previous part :doc:`Mandatories steps <../mandatory/index>`
-are installed on your machine except **Kibana and Elastic Search**.
+are installed on your machine except **Kibana, Elastic Search and SQLServer**.
 
 The softwares that will be installed are :
 
@@ -35,7 +35,7 @@ The MSI is made of six screens :
     and test the connection by clicking on the button. If it successes then the Next button is enabled otherwise
     an error message is displayed.
 
- .. image:: connection-dlg.png
+ .. image:: ../../images/connection-dlg.png
    :width: 400px
 
 .. attention:: At the moment only SqlServer is supported by the Installer.
