@@ -8,7 +8,7 @@ In this part we are going to present the most important features and how to quic
   :depth: 1
 
 If the application has been installed with Docker then jump to the next section :ref:`Install the Visual Studio extension <install-visualstudio-extension>`
-otherwise continue.
+otherwise continue to the next one.
 
 Launch SimpleIdentityServer / IdentityServer
 --------------------------------------------
@@ -44,8 +44,22 @@ Once it has been installed, create an empty project and display its contextual m
   At the end the resources are automatically created based on a naming convention.
 
 In the next sections we will run the second Scenario that consists to call a protected API via an API.
-Fetch the GitHub project https://github.com/thabart/SimpleIdentityServer.Samples.git into a new directory named "Samples"
-and open the Visual Studio solution "Scenario2/MarketingClient.sln"
+Fetch the GitHub project https://github.com/thabart/SimpleIdentityServer.Samples.git into a new directory named "Samples".
+
+Add Nuget feed & open the solution
+----------------------------------
+
+Start a new Visual Studio instance and add the Nuget feed "Samples/feed".
+To do that open the *Package Sources* window by clicking on **Tools > Options > Nuget Package Manager > Package sources**.
+Fill-in the field **name** with SimpleIdentityServer and specify the full path of the feed as **source**.
+At the end you should obtain something like :
+
+.. image:: images/nuget-packages.png
+  :width: 200px
+
+Still on the same Visual Studio instance, open the solution "Samples/Scenario2/MarketingClient.sln",
+restore the Nuget packages and build the solution.
+You are now ready to run the solution !
 
 Protect the operation
 ---------------------
