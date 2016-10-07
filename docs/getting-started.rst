@@ -25,8 +25,8 @@ To help you making a decision, you can read the :doc:`Benchmark <benchmark>`.
 Install the Visual Studio Extension
 -----------------------------------
 
-A Visual Studio Extension is available and can be downloaded :download:`here <download/SimpleIdentityServer.Vse.vsix>`. It provides some useful features and thanks to it
-any developers can easily protect an API and create client without requiring strong knowledge in OpenId, Uma and OAUTH2.0.
+A Visual Studio Extension is available and can be downloaded `here <https://github.com/thabart/SimpleIdentityServer/releases/download/1.0.0/SimpleIdentityServer.Vse.vsix>`_.
+It provides some useful features and thanks to it any developers can easily protect an API and create client without requiring strong knowledge in OpenId, Uma and OAUTH2.0.
 
 .. attention:: Unfortunately the tool is working only with Visual Studio 2015, ASP.NET CORE and C# projects.
                Previous versions and other languages will be supported in future releases.
@@ -49,7 +49,8 @@ Fetch the GitHub project https://github.com/thabart/SimpleIdentityServer.Samples
 Add Nuget feed & open the solution
 ----------------------------------
 
-Start a new Visual Studio instance and add the Nuget feed "Samples/feed".
+Download the `zip file <https://github.com/thabart/SimpleIdentityServer/releases/download/1.0.0/Feed.zip>`_ and extract its content into a new directory named *Feed*.
+Start a new Visual Studio instance and add this folder as a new Nuget feed.
 To do that open the *Package Sources* window by clicking on **Tools > Options > Nuget Package Manager > Package sources**.
 Fill-in the field **name** with SimpleIdentityServer and specify the full path of the feed as **source**.
 At the end you should obtain something like :
@@ -85,11 +86,12 @@ If they are correct then you'll see more options in the left panel::
 .. image:: images/left-panel.png
      :width: 180px
 
-Click on **manage** and import one of the settings file.
-They contain all the assets that you need to run the different examples.
+Download the `zip file <https://github.com/thabart/SimpleIdentityServer/releases/download/1.0.0/Exports.zip>`_
+which contains all the settings and extract its content into a new folder named *Settings*.
+Click on **manage** and import one of them depending on your OpenId Provider nature :
 
-* :download:`Settings file of SimpleIdentityServer <download/export-simpleidserver.json>`
-* :download:`Settings file of IdentityServer4 <download/export-idserver.json>`
+* SimpleIdentityServer : import *Settings / export-simpleidserver.json*
+* IdentityServer: import *Settings / export-idserver.json*
 
 .. image:: images/import.png
      :width: 350px

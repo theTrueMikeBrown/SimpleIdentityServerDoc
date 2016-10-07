@@ -2,7 +2,9 @@ Manual installation
 ===================
 
 This article will show you how to manually install the product on Windows.
-First download the MSI from the URL and launch it as **administrator**.
+First download the MSI from the `URL <https://github.com/thabart/SimpleIdServerInstaller/releases/download/1.0.0/SimpleIdentityServerBootstrapper.exe>`_ and launch it as **administrator**.
+
+.. attention:: SQLServer must be installed on your machine.
 
 .. contents:: Sections:
   :local:

@@ -4,8 +4,12 @@ Install elastic search and kibana
 Elastic search and Kibana must be installed to visualize the errors and logs.
 You can refer to the documentation to install both products (`Elastic Search`_ and `Kibana`_).
 
-When they are installed then the dashboard can be imported. First download the :download:`settings <export.json>` and browse the `Kibana website`_.
-Navigate to the menu **Settings > Indices** and add the following index patterns :
+When they are installed then the dashboard can be imported.
+First download the `zip file <https://github.com/thabart/SimpleIdentityServer/releases/download/1.0.0/Exports.zip>`_
+and extract its content into a new directory named *Settings* then browse the `Kibana website`_.
+Click on *Settings > Advanced* and import the *Setting / export-kibana.json* file.
+
+In the second step navigate to **Settings > Indices** and add the following index patterns :
 
  - *SimpleIdentityServer* : simpleidserver-*
  - *Uma server* : umaserver-*
