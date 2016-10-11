@@ -1,3 +1,4 @@
+=======================================================
 An heavy application wants to access to a protected API
 =======================================================
 
@@ -15,11 +16,12 @@ An heavy application wants to access to a protected API
 .. raw:: html
 
     <style> .red {color:red;} </style>
-	
+
 .. contents:: Sections:
   :local:
-  :depth: 1
+  :depth: 3
 
+-------
 Context
 -------
 
@@ -27,11 +29,13 @@ An e-commerce enterprise has internally developed a tool used by his marketing t
 about his most loyal clients. The application has been developed in WPF and interact with a RESTFUL API to retrieve the clients.
 :underline:`Only this application and users that belong to the marketing group are authorized to view the list`.
 
+-------
 Problem
 -------
 
 How the application can access to the protected operation ?
 
+--------
 Solution
 --------
 
@@ -57,8 +61,9 @@ Before going further, we are going to prepare the environment by following the s
 .. image:: ../images/first-scenario-tasks.png
     :width: 300px
 
+
 Identify and classify identities
---------------------------------
+================================
 
 The decision table can help you to identify and classify the identities :
 
@@ -87,14 +92,15 @@ Result :
 * **Authorized clients** : WPF application
 * **Claims** : role marketing
 
-When you have finished then the identities can be added.
+When the identities have been identified then they can be added.
 
 Add a client
-------------
+============
 
 Add a new client and edit his properties. In the new window update as many properties as you can.
 Some parameters are rather easy to update like : displayed name and callbackurls, contrary to the *grant-types* parameter.
 If you can guess the grant-types then jump to the next section otherwise follow the methodology presented below to identify them.
+
 
 Choose the grant-types
 ----------------------
@@ -122,7 +128,114 @@ The relationships between grant-types and those factors are listed in the follow
 Fill-in the parameters
 ----------------------
 
-Once the grant-types have been identified then other parameter values can be deduced. 
+Once the grant-types have been identified then the other parameter values can be deduced.
 Read the two following tables and pick-up the correct values.
 
++----------------------+--------------------+
+| Grant type           | Response types     |
++======================+====================+
+| Authorization code   | Authorization code |
++----------------------+--------------------+
+| Implicit flow        | Token              |
+|                      +--------------------+
+|                      | Authorization code |
+|                      +--------------------+
+|                      | Identity token     |
++----------------------+--------------------+
+| Client credentials   |                    |
++----------------------+--------------------+
+| Password             |                    |
++----------------------+--------------------+
+| Refresh token        |                    |
++----------------------+--------------------+
 
+:underline:`Mappings between grant-types and response types`
+
++------------------+--------------------------------------+
+| Type token       | Scopes                               |
++------------------+--------------------------------------+
+| Rpt token        | uma_authorization(*)                 |
+|                  +--------------------------------------+
+|                  | uma_protection(*)                    |
+|                  +--------------------------------------+
+|                  | website_api(*) (NS)                  |
+|                  +--------------------------------------+
+|                  | uma(*) (NS)                          |
++------------------+--------------------------------------+
+| Identity token   | OpenId                               |
+|                  +--------------------------------------+
+|                  | Profile                              |
+|                  +--------------------------------------+
+|                  | Email                                |
+|                  +--------------------------------------+
+|                  | Address                              |
+|                  +--------------------------------------+
+|                  | Phone                                |
+|                  +--------------------------------------+
+|                  | Role (NS)                            |
++------------------+--------------------------------------+
+
+:underline:`Mappings between tokens and scopes`
+
+Legend
+
+* (*) : mandatories scopes
+* (NS) : not conformed to OPENID & UMA
+
+.. important:: The scope **website_api** is required by the client to access to the WebSite API operations such as :
+               retrieve a resource by its url.
+
+               The other scope **uma** is used by the protected API operations to introspect the received access token.
+
+When all the parameters have been found then the edit page can be filled-in like this :
+
+* Callback uris : https://client.com
+* GrantTypes : implicit
+* Response types : token and id_token
+* Scopes: openid, profile, role, uma_authorization, uma_protection, uma, website_api
+
+.. image:: ../images/scenario1-edit-page.png
+    :width: 300px
+
+Add a resource
+==============
+
+There are two different ways to add a resource, either with the website or either with the Visual Studio Extension.
+In both cases, the name must respect a certain convention which has been decided by you and it must be consistent with
+the other resources. For example, imagine there are two pictures : one "Thierry\picture.png" and an another "Lokit\picture.png".
+At first glance this organisation seems to be awkward, and it can be easily reorganized in something cleaner :
+"images\thierry-picture.png" & "images\lokit-picture.png".
+
+If your resource is an API operation then we suggest to respect this convention :
+
+.. code-block:: console
+
+    Apis \ <application name> \ <version number> \ <business entity> \ <operation>
+
+In our scenario the resource name is : "Apis > ClientApi > v1 > ClientsController > Get".
+If you are working with the Visual Studio Extension you don't have to be worried about the name because
+the convention is respected.
+
+We really insist on the fact that it's very important to have a good architecture since the beginning.
+If later the structure is modified then all consumers of the resources will be impacted and they must be updated and redeployed again.
+
+Add authorization policy
+========================
+
+When the client and resource have been created then the authorization policy can be assigned.
+
+* Allowed clients : Scenario1
+* Allowed claims : role => marketing
+* Permissions : execute
+
+.. image:: ../images/scenario1-auth-policy.png
+    :width: 300px
+
+Assign marketing role to the resource owner
+===========================================
+
+The marketing role must be assigned to the resource owner, otherwise the authorization policy will never pass.
+Choose a resource owner, edit his properties and assign the role.
+
+.. image:: ../images/add-marketing-role.png
+    :width: 300px
