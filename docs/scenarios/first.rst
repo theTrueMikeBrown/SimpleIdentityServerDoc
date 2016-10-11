@@ -202,15 +202,13 @@ Add a resource
 
 There are two different ways to add a resource, either with the website or either with the Visual Studio Extension.
 In both cases, the name must respect a certain convention which has been decided by you and it must be consistent with
-the other resources. For example, imagine there are two pictures : one "Thierry\picture.png" and an another "Lokit\picture.png".
+the other resources. For example, imagine there are two pictures : one "Thierry > picture.png" and an another "Lokit > picture.png".
 At first glance this organisation seems to be awkward, and it can be easily reorganized in something cleaner :
-"images\thierry-picture.png" & "images\lokit-picture.png".
+"images > thierry-picture.png" & "images > lokit-picture.png".
 
 If your resource is an API operation then we suggest to respect this convention :
 
-.. code-block:: console
-
-    Apis \ <application name> \ <version number> \ <business entity> \ <operation>
+``Apis\<application name>\<version number>\<business entity>\<operation>``
 
 In our scenario the resource name is : "Apis > ClientApi > v1 > ClientsController > Get".
 If you are working with the Visual Studio Extension you don't have to be worried about the name because
@@ -239,3 +237,87 @@ Choose a resource owner, edit his properties and assign the role.
 
 .. image:: ../images/add-marketing-role.png
     :width: 300px
+
+-------
+Develop
+-------
+
+When you have finished with the initial setup, you can start to implement the changed.
+
+API
+===
+
+There are two different kinds of authorization mechanisms :
+
+* **Conventional**: the URL of the resource must match the structure of the project and also the API version.
+  The last value can be set as a property "ConventionalUmaOptions.Versions".
+* **Individual**: Limit the access to one specific resource by passing the URL and scopes
+
+The Nuget packages : *SimpleIdentityServer.UmaIntrospection.Authentication* and *SimpleIdentityServer.Uma.Authorization* must be installed
+on your API project.
+
+Enabling the conventional authorization is pretty straightforward. Insert the code below into the method *ConfigurationServices* of your Startup class.
+
+.. code-block:: c#
+
+    // Authorization policy
+    services.AddAuthorization(options =>
+    {
+      // Add conventional uma authorization
+      options.AddPolicy("uma", policy =>
+      {
+          // policy.Requirements.Add(new ConventionalUmaAuthorizationRequirementTst(null));
+          policy.AddConventionalUma();
+          // options.AddPolicy("resourceSet", policy => policy.AddResourceUma("<url>", "<read>","<update>"));
+      });
+    });
+
+Then decorate the operation "ClientsController > Get" with the attribute : ``[Authorize("uma")]``
+
+WPF application
+===============
+
+1. Add the Nuget package *SimpleIdentityServer.Proxy* to your client.
+2. Retrieve an RPT token.
+
+.. code-block:: c#
+
+    public static async Task<string> GetRptToken(
+        string idToken,
+        string umaProtectionToken,
+        string umaAuthorizationToken,
+        string resourceToken)
+    {
+        var factory = new SecurityProxyFactory();
+        var proxy = factory.GetProxy(new SecurityOptions
+        {
+            UmaConfigurationUrl = Constants.UmaConfigurationUrl,
+            OpenidConfigurationUrl = Constants.OpenidConfigurationUrl,
+            RootManageApiUrl = Constants.RootManageApiUrl
+        });
+        try
+        {
+            var result = await proxy.GetRpt("resources/Apis/ClientApi/v1/ClientsController/Get", idToken, umaProtectionToken, umaAuthorizationToken, resourceToken, new List <string>
+            {
+                "execute"
+            });
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+3. Pass the RPT token to the Authorization header
+
+.. code-block:: c#
+
+  var httpClient = new HttpClient();
+  var request = new HttpRequestMessage
+  {
+      Method = HttpMethod.Get,
+      RequestUri = new Uri("http://localhost:5100/api/clients")
+  };
+  request.Headers.Add("Authorization", $"Bearer {rptToken}");
+  var response = await httpClient.SendAsync(request);
