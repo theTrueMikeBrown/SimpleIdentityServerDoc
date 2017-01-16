@@ -1,8 +1,8 @@
 Benchmark
 ---------
 
-The following table lists the differences between our product and others : SimpleIdentityServer (version 1.0),
-IdentityServer, Gluu server and OAUTH0. It has been made in "05-10-2016", if you noticed some differences
+The following table lists the differences between our product and others : SimpleIdentityServer (version 1.0.1),
+IdentityServer, Gluu server and OAUTH0. It has been made in "16-01-2017", if you noticed some differences
 don't hesitate to contact-us by email.
 
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
@@ -70,6 +70,14 @@ don't hesitate to contact-us by email.
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | UMA supported                              | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/valid.png | .. image:: images/nvalid.png|
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+| **SCIM2.0** (`RFC-SCIM`_)                                                                                                                                          |
++--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+| SCIM2.0 supported                          | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/valid.png | .. image:: images/nvalid.png|
++--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+| **RFID ISO15693 and ISO14443A/B**                                                                                                                                  |
++--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+| OpenId provider                            | .. image:: images/valid.png | .. image:: images/nvalid.png| .. image:: images/nvalid.png| .. image:: images/nvalid.png|
++--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | **UI**                                                                                                                                                             |
 +--------------------------------------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
 | UI exists                                  | .. image:: images/valid.png | .. image:: images/valid.png | .. image:: images/valid.png | .. image:: images/valid.png |
@@ -110,3 +118,4 @@ don't hesitate to contact-us by email.
 .. _Claims: http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter
 .. _Request: http://openid.net/specs/openid-connect-core-1_0.html#RequestObject
 .. _RFC-UMA: http://openid.net/specs/openid-heart-uma-2015-12-09.html
+.. _RFC-SCIM: https://tools.ietf.org/html/rfc7644
