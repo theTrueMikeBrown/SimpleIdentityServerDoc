@@ -1,5 +1,5 @@
 =======================================================
-An heavy application wants to access to a protected API
+A heavy application wants to access to a protected API
 =======================================================
 
 .. role:: underline
