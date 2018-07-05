@@ -1,4 +1,4 @@
-Mandatories steps
+Mandatory steps
 -----------------
 
 There are two different ways to deploy the product, either manually with *MSI installer* or with *Docker*.
